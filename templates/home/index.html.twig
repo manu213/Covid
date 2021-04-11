@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Statistique Covid-19
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="text-center my-5 text-capitalize">Statistiques covid-19</h1>
+		<h2 class="text-center mb-3 text-muted">Chiffres du COVID-19 en France  le
+			{{ data.FranceGlobalLiveData.0.date }}</h2>
+		<div class="row row-cols-1 row-cols-md-3 g-4  text-center">
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Hospitalisation</h5>
+						<p class="card-text">Nombre de personnes hospitalisés.</p>
+					</div>
+					<h3 class="card-footer rounded-pill bg-warning text-light mx-2">
+						{{ data.FranceGlobalLiveData.0.hospitalises }}
+					</h3>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Réanimation</h5>
+						<p class="card-text">Nombre de personnes en réanimation.</p>
+					</div>
+					<h3 class="card-footer rounded-pill bg-danger text-light mx-2">
+						{{ data.FranceGlobalLiveData.0.reanimation }}
+					</h3>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Décès</h5>
+						<p class="card-text">Personnes décèdés depuis le debut de la pandemie.</p>
+					</div>
+					<h3 class="card-footer rounded-pill bg-dark text-light mx-2">
+						{{ data.FranceGlobalLiveData.0.deces }}
+					</h3>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Nouvelles Hospitalisations</h5>
+						<p class="card-text">Nombre de personnes hospitalisées.</p>
+					</div>
+					<h3 class="card-footer rounded-pill bg-info text-light mx-2">
+						{{ data.FranceGlobalLiveData.0.hospitalises }}
+					</h3>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Nouvelles Réanimations</h5>
+						<p class="card-text">Nombre de personnes en réanimation.</p>
+					</div>
+					<h3 class="card-footer rounded-pill bg-secondary text-light mx-2">
+						{{ data.FranceGlobalLiveData.0.hospitalises }}
+					</h3>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Guéris</h5>
+						<p class="card-text">Personnes guéris depuis le début de la pandemie.</p>
+					</div>
+					<h3 class="card-footer rounded-pill bg-info text-light mx-2">
+						{{ data.FranceGlobalLiveData.0.gueris }}
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="departements my-5">
+			<h2 class="text-center mb-3 text-muted">Chiffres du COVID-19 par département le
+				{{ departments.allLiveFranceData.0.date }}</h2>
+		</div>
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for department in departments.allLiveFranceData %}
+			<div class="col">
+				<div class="card h-100">
+					<div class="card-body text-center">
+						<h5 class="card-title">{{ department.nom }}</h5>
+						<p class="card-text">Hospitalisation<span class="badge rounded-pill bg-warning ms-2">{{ department.hospitalises }}</span></p>
+                        <p class="card-text">Réanimation<span class="badge rounded-pill bg-danger ms-2">{{ department.reanimation }}</span></p>
+                        <p><a class="btn text-light"  style="background-color: #20c997;" href="#" role="button">Plus de chiffres</a></p>
+					</div>
+				</div>
+			</div>
+        {% endfor %}
+		</div>
+	</div>
+
+{% endblock %}
