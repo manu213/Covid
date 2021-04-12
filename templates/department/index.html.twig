@@ -9,7 +9,7 @@
 			{{ data.LiveDataByDepartement.0.nom }}</h1>
 		<h2 class="text-muted text-center mb-3">Source
 			{{ data.LiveDataByDepartement.0.source.nom }}</h2>
-		<div class="row justify-content-center">
+		<div class="row justify-content-center my-3">
 			<div class="col-4">
 				<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
 					<div class="card-header text-center">Hospitalisés</div>
@@ -30,6 +30,9 @@
 			</div>
 		</div>
 	</div>
-    <div class="container"></div>
+	<div class="container">
+    <p class="text-center lead">Ce tableau représente le nombre de nouvelles admissions en réanimations et hospitalisations</p>
+		{{ render_chart(chart) }}
+	</div>
 
 </div>{% endblock %}

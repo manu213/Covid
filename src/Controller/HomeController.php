@@ -14,9 +14,12 @@ class HomeController extends AbstractController
      */
     public function index(ApiService $apiService): Response
     {
-        return $this->render('home/index.html.twig', [
+        $response = $this->render('home/index.html.twig', [
             'data' => $apiService->getFranceData(),
             'departments' => $apiService->getAllDepartment(),
         ]);
+        $response->setSharedMaxAge(3600);
+
+        return $response;
     }
 }
