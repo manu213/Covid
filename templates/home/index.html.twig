@@ -5,7 +5,7 @@
 
 {% block body %}
 	<div class="container">
-		<h1 class="text-center my-5 text-capitalize">Statistiques covid-19</h1>
+		<h1 class="text-center my-5 text-capitalize">Statistiques COVID-19</h1>
 		<h2 class="text-center mb-3 text-muted">Chiffres du COVID-19 en France  le
 			{{ data.FranceGlobalLiveData.0.date }}</h2>
 		<div class="row row-cols-1 row-cols-md-3 g-4  text-center">
@@ -49,7 +49,7 @@
 						<p class="card-text">Nombre de personnes hospitalisées.</p>
 					</div>
 					<h3 class="card-footer rounded-pill bg-info text-light mx-2">
-						{{ data.FranceGlobalLiveData.0.hospitalises }}
+						{{ data.FranceGlobalLiveData.0.nouvellesHospitalisations }}
 					</h3>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 						<p class="card-text">Nombre de personnes en réanimation.</p>
 					</div>
 					<h3 class="card-footer rounded-pill bg-secondary text-light mx-2">
-						{{ data.FranceGlobalLiveData.0.hospitalises }}
+						{{ data.FranceGlobalLiveData.0.nouvellesReanimations }}
 					</h3>
 				</div>
 			</div>
@@ -88,7 +88,7 @@
 						<h5 class="card-title">{{ department.nom }}</h5>
 						<p class="card-text">Hospitalisation<span class="badge rounded-pill bg-warning ms-2">{{ department.hospitalises }}</span></p>
                         <p class="card-text">Réanimation<span class="badge rounded-pill bg-danger ms-2">{{ department.reanimation }}</span></p>
-                        <p><a class="btn text-light"  style="background-color: #20c997;" href="#" role="button">Plus de chiffres</a></p>
+                        <p><a class="btn text-light"  style="background-color: #20c997;" href="{{ path('department', {'department' : department.nom }) }}" role="button">Plus de chiffres</a></p>
 					</div>
 				</div>
 			</div>

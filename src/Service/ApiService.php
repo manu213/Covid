@@ -13,7 +13,7 @@ class ApiService
         $this->client = $client;
     }
     
-    public function getFranceData(): array
+    public function getFranceData()
     {
         return $this->getApi(('FranceLiveGlobalData'));
     }
@@ -21,6 +21,16 @@ class ApiService
     public function getAllDepartment()
     {
         return $this->getApi('AllLiveData');
+    }
+
+    public function getDepartmentData($department)
+    {
+        return $this->getApi('LiveDataByDepartement?Departement=' . $department);
+    }
+
+    public function getAllDataByDate($date)
+    {
+        return $this->getApi('AllDataByDate?date=' . $date);
     }
 
     public function getApi($var): array
