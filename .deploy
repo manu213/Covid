@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -av ./ stme0532@clim.o2switch.net:~/crmsfd --include=public/bundles --include=public/build --include=public/.htaccess --include=vendor --exclude-from=.gitignore --exclude=".*"
