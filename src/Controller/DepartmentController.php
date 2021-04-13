@@ -30,6 +30,7 @@ class DepartmentController extends AbstractController
                     $label[] = $data['date'];
                     $hospitalises[] = $data['nouvellesHospitalisations'];
                     $reanimation[] = $data['nouvellesReanimations'];
+                    break;
                 }
             }
         }
