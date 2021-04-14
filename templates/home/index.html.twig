@@ -6,14 +6,15 @@
 {% block body %}
 	<div class="container">
 		<h1 class="text-center my-5 text-capitalize">Statistiques COVID-19</h1>
-		<h2 class="text-center mb-3 text-muted">Chiffres du COVID-19 en France  le
+		<h2 class="text-center mb-3 text-muted" id="national">Chiffres de la COVID-19 en France  le
 			{{ data.FranceGlobalLiveData.0.date }}</h2>
+			<p class="text-muted text-center">Source Santé publique France Data</p>
 		<div class="row row-cols-1 row-cols-md-3 g-4  text-center">
 			<div class="col">
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title">Hospitalisation</h5>
-						<p class="card-text">Nombre de personnes hospitalisés.</p>
+						<p class="card-text">Nombre de personnes actuellement hospitalisés.</p>
 					</div>
 					<h3 class="card-footer rounded-pill bg-warning text-light mx-2">
 						{{ data.FranceGlobalLiveData.0.hospitalises }}
@@ -24,7 +25,7 @@
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title">Réanimation</h5>
-						<p class="card-text">Nombre de personnes en réanimation.</p>
+						<p class="card-text">Nombre de personnes actuellement en réanimation.</p>
 					</div>
 					<h3 class="card-footer rounded-pill bg-danger text-light mx-2">
 						{{ data.FranceGlobalLiveData.0.reanimation }}
@@ -46,7 +47,7 @@
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title">Nouvelles Hospitalisations</h5>
-						<p class="card-text">Nombre de personnes hospitalisées.</p>
+						<p class="card-text">Personnes nouvellement hospitalisées.</p>
 					</div>
 					<h3 class="card-footer rounded-pill bg-info text-light mx-2">
 						{{ data.FranceGlobalLiveData.0.nouvellesHospitalisations }}
@@ -57,7 +58,7 @@
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title">Nouvelles Réanimations</h5>
-						<p class="card-text">Nombre de personnes en réanimation.</p>
+						<p class="card-text">Personnes nouvellement admises en réanimation.</p>
 					</div>
 					<h3 class="card-footer rounded-pill bg-secondary text-light mx-2">
 						{{ data.FranceGlobalLiveData.0.nouvellesReanimations }}
@@ -76,8 +77,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="departements my-5">
-			<h2 class="text-center mb-3 text-muted">Chiffres du COVID-19 par département le
+		<div class="departements my-5" id="departements">
+			<h2 class="text-center mb-3 text-muted">Chiffres de la COVID-19 par département le
 				{{ departments.allLiveFranceData.0.date }}</h2>
 		</div>
 		<div class="row row-cols-1 row-cols-md-3 g-4">
